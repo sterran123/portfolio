@@ -1,0 +1,152 @@
+/* ===== 김민기 포트폴리오 — 밝은 테마, 반응형 ===== */
+:root {
+  --bg: #FAF8F4;
+  --card: #FFFFFF;
+  --ink: #23201B;
+  --ink-2: #5D574C;
+  --ink-3: #8A8275;
+  --accent: #C96F2F;        /* 따뜻한 주황 — 리추얼의 '아침' 느낌 */
+  --accent-soft: #F6E4D2;
+  --line: #E9E3D9;
+  --radius: 18px;
+  --shadow: 0 2px 10px rgba(60,48,30,.06), 0 12px 32px rgba(60,48,30,.07);
+  --max: 1060px;
+}
+
+* { box-sizing: border-box; margin: 0; }
+html { scroll-behavior: smooth; }
+body {
+  background: var(--bg);
+  color: var(--ink);
+  font-family: 'Pretendard Variable', 'Pretendard', -apple-system, 'Malgun Gothic', sans-serif;
+  line-height: 1.72;
+  -webkit-font-smoothing: antialiased;
+}
+a { color: var(--accent); }
+.wrap { max-width: var(--max); margin: 0 auto; padding: 0 24px; }
+
+/* ----- 히어로 ----- */
+.hero {
+  padding: 96px 0 72px;
+  background:
+    radial-gradient(1200px 400px at 70% -10%, var(--accent-soft), transparent 60%),
+    var(--bg);
+  border-bottom: 1px solid var(--line);
+}
+.hero-eyebrow {
+  font-size: 13px; font-weight: 700; letter-spacing: .16em;
+  text-transform: uppercase; color: var(--accent); margin-bottom: 14px;
+}
+.hero-name {
+  font-size: clamp(44px, 8vw, 76px); font-weight: 800;
+  letter-spacing: -.03em; line-height: 1.05; margin-bottom: 22px;
+}
+.hero-line { font-size: clamp(16px, 2.4vw, 20px); color: var(--ink-2); font-weight: 500; }
+
+/* ----- 네비 ----- */
+.nav {
+  position: sticky; top: 0; z-index: 20;
+  background: rgba(250,248,244,.85); backdrop-filter: blur(10px);
+  border-bottom: 1px solid var(--line);
+}
+.nav-in { display: flex; gap: 4px; }
+.nav a {
+  padding: 14px 18px; font-size: 14px; font-weight: 600;
+  color: var(--ink-2); text-decoration: none; border-radius: 10px;
+}
+.nav a:hover { color: var(--ink); background: var(--accent-soft); }
+
+/* ----- 섹션 공통 ----- */
+.sec { padding: 72px 0 8px; }
+.sec-eyebrow {
+  font-size: 13px; font-weight: 700; letter-spacing: .14em;
+  text-transform: uppercase; color: var(--accent); margin-bottom: 22px;
+}
+.card {
+  background: var(--card); border: 1px solid var(--line);
+  border-radius: var(--radius); box-shadow: var(--shadow);
+}
+
+/* ----- 자기소개서 ----- */
+.essay { padding: clamp(28px, 5vw, 52px); }
+.essay p { font-size: 17px; margin-bottom: 20px; color: var(--ink); }
+.essay p:last-child { margin-bottom: 0; }
+.essay strong { color: var(--accent); font-weight: 700; }
+.essay em { font-style: normal; font-weight: 600; color: var(--ink); background: linear-gradient(transparent 55%, var(--accent-soft) 55%); }
+.essay-note { font-size: 13.5px !important; color: var(--ink-3) !important; margin-top: 28px !important; }
+
+/* ----- 강점 셋 ----- */
+.grid3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+.strength { padding: 30px 26px; display: flex; flex-direction: column; gap: 14px; position: relative; overflow: hidden; }
+.strength-no {
+  font-size: 42px; font-weight: 800; color: var(--accent-soft);
+  position: absolute; top: 12px; right: 18px; line-height: 1;
+}
+.strength h3 { font-size: 20px; font-weight: 800; letter-spacing: -.01em; padding-right: 48px; }
+.strength-scene { font-size: 14.5px; color: var(--ink-2); flex: 1; }
+.strength blockquote {
+  font-size: 14px; color: var(--ink-2); font-style: italic;
+  border-left: 3px solid var(--accent); padding-left: 12px;
+}
+.strength cite { display: block; font-size: 12.5px; color: var(--ink-3); font-style: normal; margin-top: 4px; }
+.strength-works { border-top: 1px dashed var(--line); padding-top: 14px; display: flex; flex-direction: column; gap: 6px; }
+.strength-works span { font-size: 12px; font-weight: 700; letter-spacing: .1em; color: var(--ink-3); text-transform: uppercase; }
+.strength-works a { font-size: 14px; font-weight: 600; text-decoration: none; }
+.strength-works a:hover { text-decoration: underline; }
+
+/* ----- 이야기 ----- */
+.journey { padding: 8px 30px; }
+.journey-steps { list-style: none; padding: 0; }
+.journey-steps li {
+  display: flex; gap: 18px; align-items: flex-start;
+  padding: 24px 0; border-bottom: 1px dashed var(--line);
+}
+.journey-steps li:last-child { border-bottom: 0; }
+.journey-tag {
+  flex-shrink: 0; margin-top: 2px; padding: 4px 12px;
+  font-size: 12.5px; font-weight: 700; border-radius: 999px;
+  background: var(--accent-soft); color: var(--accent);
+  min-width: 96px; text-align: center;
+}
+.journey-steps p { color: var(--ink-2); font-size: 15.5px; }
+
+/* ----- 과제 그리드 ----- */
+.grid4 { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; }
+.work {
+  padding: 22px 20px; text-decoration: none; color: var(--ink);
+  display: flex; flex-direction: column; gap: 8px;
+  transition: transform .18s ease, box-shadow .18s ease;
+}
+a.work:hover { transform: translateY(-4px); box-shadow: 0 6px 18px rgba(60,48,30,.12); }
+.work-no { font-size: 12px; font-weight: 800; color: var(--accent); letter-spacing: .08em; }
+.work h4 { font-size: 15.5px; font-weight: 800; letter-spacing: -.01em; }
+.work p { font-size: 13px; color: var(--ink-2); flex: 1; }
+.work-tag {
+  align-self: flex-start; font-size: 11.5px; font-weight: 700;
+  padding: 3px 10px; border-radius: 999px;
+  background: var(--accent-soft); color: var(--accent);
+}
+.work-future { border-style: dashed; background: transparent; box-shadow: none; }
+.work-future .work-no { color: var(--ink-3); }
+.tag-future { background: var(--bg); color: var(--ink-3); border: 1px solid var(--line); }
+
+/* ----- 푸터 ----- */
+.footer { margin-top: 80px; padding: 40px 0; border-top: 1px solid var(--line); }
+.footer p { font-size: 14px; color: var(--ink-2); }
+.footer-sub { font-size: 12.5px; color: var(--ink-3); margin-top: 4px; }
+
+/* ----- 반응형 ----- */
+@media (max-width: 960px) {
+  .grid4 { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 760px) {
+  .grid3 { grid-template-columns: 1fr; }
+  .hero { padding: 64px 0 48px; }
+  .br-pc { display: none; }
+  .nav-in { overflow-x: auto; }
+  .sec { padding: 48px 0 4px; }
+}
+@media (max-width: 480px) {
+  .grid4 { grid-template-columns: 1fr; }
+  .journey-steps li { flex-direction: column; gap: 8px; }
+}
