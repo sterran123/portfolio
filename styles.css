@@ -112,6 +112,15 @@ a { color: var(--accent); }
 
 /* ----- 과제 그리드 ----- */
 .grid4 { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; }
+.work-feature {
+  display: flex; flex-direction: column; gap: 8px;
+  margin-bottom: 20px; padding: 30px 28px;
+  background: linear-gradient(135deg, var(--card) 0%, var(--accent-soft) 130%);
+  border: 1px solid var(--accent);
+}
+.work-feature .work-no { font-size: 13px; }
+.work-feature h4 { font-size: 21px; }
+.work-feature p { font-size: 14.5px; }
 .work {
   padding: 22px 20px; text-decoration: none; color: var(--ink);
   display: flex; flex-direction: column; gap: 8px;
